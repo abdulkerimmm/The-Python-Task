@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Result</title>
+    <style>
+      .score-container {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+      }
+      footer {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        font-size: 12px;
+        color: #6c757d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="score-container">
+      <p>Score: {{ score }}</p>
+      <p>Highest Score: {{ highest_score }}</p>
+    </div>
+    <footer>Developed by [Your Name]</footer>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quiz</title>
+    <style>
+      body {
+        position: relative;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+
+      footer {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        font-size: 12px;
+        color: #6c757d;
+      }
+
+      .score-container {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quiz</h1>
+    <form action="/submit" method="POST">
+      <!-- Question about the user's name -->
+      <h2>Question 1: What is your name?</h2>
+      <input type="text" name="username" required />
+
+      <!-- First question with multiple choice -->
+      <h2>Question 2: What is your favorite color?</h2>
+      <input type="radio" name="question1" value="red" required /> Red<br />
+      <input type="radio" name="question1" value="blue" /> Blue<br />
+      <input type="radio" name="question1" value="green" /> Green<br />
+
+      <!-- Second question with multiple choice -->
+      <h2>Question 3: What is your favorite animal?</h2>
+      <input type="radio" name="question2" value="dog" required /> Dog<br />
+      <input type="radio" name="question2" value="cat" /> Cat<br />
+      <input type="radio" name="question2" value="parrot" /> Parrot<br />
+
+      <!-- Third question with a text input -->
+      <h2>Question 4: Describe your hobbies or interests:</h2>
+      <textarea name="question3" rows="4" cols="50" required></textarea>
+
+      <br />
+      <input type="submit" value="Submit Answers" />
+    </form>
+
+    <!-- User's best score in the top right corner -->
+    <div class="score-container">
+      <p>Best Score: {{ highest_score or 'N/A' }}</p>
+    </div>
+
+    <!-- Footer with information about the author -->
+    <footer>Developed by [Your Name]</footer>
+  </body>
+</html>
